@@ -1,0 +1,13 @@
+---
+- hosts: test
+  become: yes
+  gather_facts: yes
+
+  tasks:
+  - name: Installing Apache in CentOS
+    yum: name=httpd state=latest
+    when: ansible_distribution == "CentOS"
+
+  - name: Installing Apache in Ubuntu
+    apt: name=apache2 state=latest
+    when: ansible_distribution == "Ubuntu"
