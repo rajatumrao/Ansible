@@ -1,6 +1,5 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -14,28 +13,28 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "base"
 ############################
-  # test_box configuration
-  config.vm.define "test_box" do |test_box|
-    test_box.vm.box = "ubuntu/trusty64"
-    test_box.vm.network "private_network", ip: "192.168.33.10"
-    test_box.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
-    #test_box.ssh.username = "vagrant"
-    #test_box.ssh.password = "vagrant"
-    config.vm.provider "virtualbox" do |test_box|
-      test_box.memory = 1024
-      test_box.cpus = 1
+  # pain configuration
+  config.vm.define "pain" do |pain|
+    pain.vm.box = "ubuntu/trusty64"
+    pain.vm.network "private_network", ip: "192.168.33.10"
+    pain.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    #pain.ssh.username = "vagrant"
+    #pain.ssh.password = "vagrant"
+    config.vm.provider "virtualbox" do |pain|
+      pain.memory = 1024
+      pain.cpus = 1
     end
   end
-  # test_box1 configuration
-  config.vm.define "test_box1" do |test_box1|
-    test_box1.vm.box = "centos/7"
-    test_box1.vm.network "private_network", ip: "192.168.33.11"
-    test_box1.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
-    #test_box.ssh.username = "vagrant"
-    #test_box.ssh.password = "vagrant"
-    config.vm.provider "virtualbox" do |test_box1|
-      test_box1.memory = 1024
-      test_box1.cpus = 1
+  # life configuration
+  config.vm.define "life" do |life|
+    life.vm.box = "centos/7"
+    life.vm.network "private_network", ip: "192.168.33.11"
+    life.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    #life.ssh.username = "vagrant"
+    #life.ssh.password = "vagrant"
+    config.vm.provider "virtualbox" do |life|
+      life.memory = 1024
+      life.cpus = 1
     end
   end
  # agony configuration
