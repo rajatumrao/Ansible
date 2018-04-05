@@ -122,3 +122,5 @@ keytool -changealias \
         -keystore keystore.jks
 ```        
 You will be prompted for the keystore password.
+
+Ref :- https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores
