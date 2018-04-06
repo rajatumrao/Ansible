@@ -1,0 +1,16 @@
+{
+  "variables": {
+    "aws_access_key": "AKIAI6CUMVEMSVF6LZEQ",
+    "aws_secret_key": "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"
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "us-east-1",
+    "source_ami": "ami-b81dbfc5",
+    "instance_type": "t2.micro",
+    "ssh_username": "centos",
+    "ami_name": "packer-example {{timestamp}}"
+  }]
+}
