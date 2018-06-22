@@ -8,7 +8,7 @@ This article assumes some prior knowledge about modern cluster technology. We wi
 
 If you are not familiar with CoreOS, it may be helpful to review some basic information about the CoreOS system in order to understand the types of environments that Kubernetes is meant to be deployed on.
 
-What is Kubernetes?
+What is Kubernetes ?
 Kubernetes, at its basic level, is a system for managing containerized applications across a cluster of nodes. In many ways, Kubernetes was designed to address the disconnect between the way that modern, clustered infrastructure is designed, and some of the assumptions that most applications and services have about their environments.
 
 Most clustering technologies strive to provide a uniform platform for application deployment. The user should not have to care much about where work is scheduled. The unit of work presented to the user is at the "service" level and can be accomplished by any of the member nodes.
