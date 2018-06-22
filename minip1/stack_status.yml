@@ -1,0 +1,48 @@
+---
+- hosts: loadbalancer
+  become: true
+  tasks:
+    - name: verify Nginx
+      command: service nginx status
+    - name: verify nginx is listening on 80
+      wait_for: port=80 timeout=10
+
+- hosts: webservers
+  become: true
+  tasks:
+    - name: verify apache2
+      command: service apache2 status
+    - name: verify apache2 is listening on 80
+      wait_for: port=80 timeout=10
+
+- hosts: dbserver
+  become: true
+  tasks:
+    - name: verify mysql
+      command: service mysql status
+    - name: verify mysql is listening on 3306
+      wait_for: port=3306 timeout=10
+
+- hosts: localhost
+  tasks:
+    - name: verify end to end
+      uri: url=http://{{item}} return_content=yes
+      with_items: 192.168.5.30
+      register: lb_index
+
+    - fail: msg="index failed to return content"
+      when: "'Hello, from sunny' not in item.content"
+      with_items: "{{lb_index.results}}"
+
+- hosts: loadbalancer
+  tasks:
+    - name: verify backend response
+      uri: url=http://{{item}} return_content=yes
+      with_items:
+        - 192.168.33.11
+        - 192.168.4.20
+      register: app_index
+
+    - fail: msg="index failed to return content"
+      when: "'Hello, from sunny' not in item.content"
+      with_items: "{{app_index.results}}"

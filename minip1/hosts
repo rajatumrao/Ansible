@@ -1,0 +1,35 @@
+
+# This is host file for Ansible
+[all]
+pain ansible_ssh_host=192.168.33.10 ansible_ssh_private_key_file=.vagrant/machines/pain/virtualbox/private_key ansible_ssh_user=vagrant
+life ansible_ssh_host=192.168.33.11 ansible_ssh_private_key_file=.vagrant/machines/life/virtualbox/private_key ansible_ssh_user=vagrant
+agony ansible_ssh_host=192.168.4.20 ansible_ssh_private_key_file=.vagrant/machines/agony/virtualbox/private_key ansible_ssh_user=vagrant
+soul ansible_ssh_host=192.168.5.30 ansible_ssh_private_key_file=.vagrant/machines/soul/virtualbox/private_key ansible_ssh_user=vagrant
+
+#test_box ansible_ssh_host=192.168.33.10 ansible_ssh_private_key_file=.vagrant/machines/test_box/virtualbox/private_key ansible_ssh_user=vagrant
+#test_box1 ansible_ssh_host=192.168.33.11 ansible_ssh_private_key_file=.vagrant/machines/test_box1/virtualbox/private_key ansible_ssh_user=vagrant
+#agony ansible_ssh_host=192.168.2.40 ansible_ssh_private_key_file=.vagrant/machines/agony/virtualbox/private_key ansible_ssh_user=ubuntu
+#soul ansible_ssh_host=192.168.5.30 ansible_ssh_private_key_file=.vagrant/machines/soul/virtualbox/private_key ansible_ssh_user=vagrant
+
+# centos servers
+[centos]
+
+#test_box1 ansible_ssh_host=192.168.33.11 ansible_ssh_private_key_file=.vagrant/machines/test_box1/virtualbox/private_key ansible_ssh_user=vagrant
+#soul ansible_ssh_host=192.168.5.30 ansible_ssh_private_key_file=.vagrant/machines/soul/virtualbox/private_key ansible_ssh_user=vagrant
+
+#ubuntu servers
+[ubuntu]
+
+#test_box ansible_ssh_host=192.168.33.10 ansible_ssh_private_key_file=.vagrant/machines/test_box/virtualbox/private_key ansible_ssh_user=vagrant
+#agony ansible_ssh_host=192.168.2.40 ansible_ssh_private_key_file=.vagrant/machines/agony/virtualbox/private_key ansible_ssh_user=ubuntu
+
+[dbserver]
+pain ansible_ssh_host=192.168.33.10 ansible_ssh_private_key_file=.vagrant/machines/pain/virtualbox/private_key ansible_ssh_user=vagrant
+
+[webservers]
+life ansible_ssh_host=192.168.33.11 ansible_ssh_private_key_file=.vagrant/machines/life/virtualbox/private_key ansible_ssh_user=vagrant
+
+agony ansible_ssh_host=192.168.4.20 ansible_ssh_private_key_file=.vagrant/machines/agony/virtualbox/private_key ansible_ssh_user=vagrant
+
+[loadbalancer]
+soul ansible_ssh_host=192.168.5.30 ansible_ssh_private_key_file=.vagrant/machines/soul/virtualbox/private_key ansible_ssh_user=vagrant
